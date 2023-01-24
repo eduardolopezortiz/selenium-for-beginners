@@ -11,7 +11,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class NegativeTest {// class to test a negative test
-	@Test(priority = 1)
+	@Test(priority = 1, groups = { "negativeTests", "smokeTests" })
+
 	public void incorrectusernameTest() {
 
 		System.out.println("Starting incorrect user namame test");
@@ -67,7 +68,7 @@ public class NegativeTest {// class to test a negative test
 
 	}
 	
-	@Test(priority = 2, enabled = false)
+	@Test(priority = 2, groups = { "negativeTests" })
 	public void incorrectupasswordTest() {
 
 		System.out.println("<<<<Starting incorrect password test>>>>");
