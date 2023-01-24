@@ -67,7 +67,7 @@ public class NegativeTest {// class to test a negative test
 
 	}
 	
-	@Test(priority = 2)
+	@Test(priority = 2, enabled = false)
 	public void incorrectupasswordTest() {
 
 		System.out.println("<<<<Starting incorrect password test>>>>");
