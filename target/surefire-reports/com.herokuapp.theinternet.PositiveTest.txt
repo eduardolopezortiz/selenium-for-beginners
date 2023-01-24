@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.herokuapp.theinternet.PositiveTest
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 36.943 s - in com.herokuapp.theinternet.PositiveTest

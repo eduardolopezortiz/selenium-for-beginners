@@ -24,13 +24,14 @@ public class PositiveTest {
 		// open test page
 		String url = "https://the-internet.herokuapp.com/login";
 		driver.get(url);
-		System.out.println("page is open");
+		System.out.println("<<<page is open>>>");
 
 		// sleep for 3 second
-		sleep(3000);
+		sleep(1500);
 
 		// maximize browser window
 		driver.manage().window().maximize();
+		sleep(1500);
 		
 		//enter username
 		WebElement username = driver.findElement(By.xpath("/html//input[@id='username']"));

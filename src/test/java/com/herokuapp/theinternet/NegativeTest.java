@@ -25,10 +25,10 @@ public class NegativeTest {// class to test a negative test
 		// open test page
 		String url = "https://the-internet.herokuapp.com/login";
 		driver.get(url);
-		System.out.println("page is open");
+		System.out.println("<<<page is open>>>");
 
 		// sleep for 3 second
-		sleep(3000);
+		sleep(2000);
 
 		// maximize browser window
 		driver.manage().window().maximize();
@@ -36,7 +36,7 @@ public class NegativeTest {// class to test a negative test
 		
 		//enter the wrong username
 		WebElement username = driver.findElement(By.xpath("/html//input[@id='username']"));
-		username.sendKeys("tomsmith");
+		username.sendKeys("tomsmith5");
 		sleep(1500);
 		
 		//enter password
