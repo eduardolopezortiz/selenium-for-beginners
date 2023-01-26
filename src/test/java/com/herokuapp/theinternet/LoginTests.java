@@ -6,26 +6,37 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.decorators.WebDriverDecorator;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class LoginTests {
+	
+	private WebDriver driver;
+	
+	@BeforeMethod(alwaysRun = true)
+	private void setUp() {
+		// TODO Auto-generated method stub
+		// create driver
+				System.setProperty("webdriver.chrome.driver",
+						"C:/Users/BI/eclipse-workspace/selenium-for-beginners/src/main/resources/chromedriver.exe");
+				// new instance of driver
+				driver = new ChromeDriver();
+
+				// sleep for 3 second
+				sleep(1000);
+
+				// maximize browser window
+				driver.manage().window().maximize();
+				sleep(1000);
+
+	}
 
 	@Test(priority = 1, groups = { "positiveTests", "smokeTests" })
 	public void positiveloginTest() {
 
-		// create driver
-		System.setProperty("webdriver.chrome.driver",
-				"C:/Users/BI/eclipse-workspace/selenium-for-beginners/src/main/resources/chromedriver.exe");
-		// new instance of driver
-		WebDriver driver = new ChromeDriver();
-
-		// sleep for 3 second
-		sleep(1000);
-
-		// maximize browser window
-		driver.manage().window().maximize();
-		sleep(1000);
+		
 
 		// open test page
 		String url = "https://the-internet.herokuapp.com/login";
@@ -61,7 +72,7 @@ public class LoginTests {
 		WebElement logOutButton = driver.findElement(By.xpath("//div[@id='content']//a[@href='/logout']"));
 		// logOutButton.click();
 		Assert.assertTrue(logOutButton.isDisplayed(), "Log out button is not visible");
-		sleep(5000);
+		sleep(3000);
 
 		// success login message
 		WebElement succesMessage = driver.findElement(By.xpath("/html//div[@id='flash']"));
@@ -73,10 +84,12 @@ public class LoginTests {
 				"Actual message doesnt contain expected message.\nActual message: " + actualMessage
 						+ "\nExpected message: " + expectedMessage);
 
-		// close browser
-		driver.quit();
+	
 
 	}
+	
+
+
 
 	@Parameters({ "username", "password", "expectedMessage" })
 	@Test(priority = 2, groups = { "negativeTests", "smokeTests" })
@@ -84,13 +97,11 @@ public class LoginTests {
 	public void negativeLoginTest(String username, String password, String expectedErrorMessage) {
 
 		System.out.println("Starting negativeLoginTest with " + username + " and " + password);
-
-		// create driver
-		System.setProperty("webdriver.chrome.driver",
-				"C:/Users/BI/eclipse-workspace/selenium-for-beginners/src/main/resources/chromedriver.exe");
-		// new instance of driver
-		WebDriver driver = new ChromeDriver();
-
+		/*
+		 * // create driver System.setProperty("webdriver.chrome.driver",
+		 * "C:/Users/BI/eclipse-workspace/selenium-for-beginners/src/main/resources/chromedriver.exe"
+		 * ); // new instance of driver WebDriver driver = new ChromeDriver();
+		 */
 		// sleep for 3 seconds
 		sleep(1000);
 
@@ -108,17 +119,17 @@ public class LoginTests {
 		// enter the wrong username
 		WebElement usernameElemnet = driver.findElement(By.xpath("/html//input[@id='username']"));
 		usernameElemnet.sendKeys(username);
-		sleep(1500);
+		sleep(1000);
 
 		// enter password
 		WebElement passwordElement = driver.findElement(By.name("password"));
 		passwordElement.sendKeys(password);
-		sleep(1500);
+		sleep(1000);
 
 		// click login button
 		WebElement loginButton = driver.findElement(By.xpath("//form[@id='login']/button[@class='radius']"));
 		loginButton.click();
-		sleep(1500);
+		sleep(1000);
 
 		// success login message
 		WebElement invalidUserNameMessage = driver.findElement(By.xpath("/html//div[@id='flash']"));
@@ -127,9 +138,9 @@ public class LoginTests {
 				"Actual message doesnt contain expected message.\nActual message: " + actualMessage
 						+ "\nExpected message: " + expectedErrorMessage);
 
-		sleep(1500);
+		sleep(1000);
 
-		driver.quit();
+		
 
 	}
 
@@ -139,6 +150,13 @@ public class LoginTests {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	
+	@AfterMethod(alwaysRun = true)
+	private void tearDown() {
+		// close browser
+		driver.quit();
 	}
 
 }
