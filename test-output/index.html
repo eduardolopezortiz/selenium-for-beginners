@@ -170,6 +170,7 @@
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite name=&quot;NegativeTestSuite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;PositiveTest&quot;&gt;
+    &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
     &lt;groups&gt;
       &lt;run&gt;
         &lt;include name=&quot;positiveTests&quot;/&gt;
@@ -181,6 +182,7 @@
   &lt;/test&gt; &lt;!-- PositiveTest --&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;NegativeUsernameTest&quot;&gt;
     &lt;parameter name=&quot;password&quot; value=&quot;SuperSecretPassword!&quot;/&gt;
+    &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
     &lt;parameter name=&quot;expectedMessage&quot; value=&quot;Your username is invalid!&quot;/&gt;
     &lt;parameter name=&quot;username&quot; value=&quot;incorrectUsername&quot;/&gt;
     &lt;classes&gt;
@@ -193,6 +195,7 @@
   &lt;/test&gt; &lt;!-- NegativeUsernameTest --&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;NegativePasswordTest&quot;&gt;
     &lt;parameter name=&quot;password&quot; value=&quot;incorrectPassword!&quot;/&gt;
+    &lt;parameter name=&quot;browser&quot; value=&quot;firefox&quot;/&gt;
     &lt;parameter name=&quot;expectedMessage&quot; value=&quot;Your password is invalid!&quot;/&gt;
     &lt;parameter name=&quot;username&quot; value=&quot;tomsmith&quot;/&gt;
     &lt;classes&gt;
@@ -278,15 +281,15 @@ data.addRows(3);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'negativeLoginTest')
 data.setCell(0, 2, 'com.herokuapp.theinternet.LoginTests')
-data.setCell(0, 3, 22181);
+data.setCell(0, 3, 22721);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'negativeLoginTest')
 data.setCell(1, 2, 'com.herokuapp.theinternet.LoginTests')
-data.setCell(1, 3, 22096);
+data.setCell(1, 3, 22619);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'positiveloginTest')
 data.setCell(2, 2, 'com.herokuapp.theinternet.LoginTests')
-data.setCell(2, 3, 19522);
+data.setCell(2, 3, 19714);
 window.suiteTableData['NegativeTestSuite']= { tableData: data, tableDiv: 'times-div-NegativeTestSuite'}
 return data;
 }
@@ -330,40 +333,40 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">com.herokuapp.theinternet.LoginTests</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
-                <span class="method-name">setUp</span>
+                <span class="method-name">setUp(chrome)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">positiveloginTest</span>
-                <span class="method-start">8252 ms</span>
+                <span class="method-start">10656 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">27777 ms</span>
+                <span class="method-start">30391 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
-                <span class="method-name">setUp</span>
-                <span class="method-start">28127 ms</span>
+                <span class="method-name">setUp(chrome)</span>
+                <span class="method-start">31216 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">negativeLoginTest(incorrectUsername, SuperSecretPassword!, Your username is invalid!)</span>
-                <span class="method-start">35032 ms</span>
+                <span class="method-start">38660 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">57221 ms</span>
+                <span class="method-start">61291 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
-                <span class="method-name">setUp</span>
-                <span class="method-start">57455 ms</span>
+                <span class="method-name">setUp(firefox)</span>
+                <span class="method-start">61894 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">negativeLoginTest(tomsmith, incorrectPassword!, Your password is invalid!)</span>
-                <span class="method-start">64404 ms</span>
+                <span class="method-start">76210 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">86513 ms</span>
+                <span class="method-start">98941 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

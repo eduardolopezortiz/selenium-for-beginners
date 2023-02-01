@@ -4,10 +4,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.decorators.WebDriverDecorator;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -15,14 +17,45 @@ public class LoginTests {
 	
 	private WebDriver driver;
 	
+	
+	
+	@Parameters({ "browser"})	
 	@BeforeMethod(alwaysRun = true)
-	private void setUp() {
+	//si no hay un parametro que venga del LoginTests.xml e su lugar asiganra chrome a la variable browser
+	private void setUp(@Optional("chrome") String browser) {
 		// TODO Auto-generated method stub
 		// create driver
-				System.setProperty("webdriver.chrome.driver",
-						"C:/Users/BI/eclipse-workspace/selenium-for-beginners/src/main/resources/chromedriver.exe");
-				// new instance of driver
-				driver = new ChromeDriver();
+		switch (browser) {
+		case "chrome":
+			System.setProperty("webdriver.chrome.driver",
+					"C:/Users/BI/eclipse-workspace/selenium-for-beginners/src/main/resources/chromedriver.exe");
+			// new instance of driver
+			driver = new ChromeDriver();
+			break;
+
+			
+		case "firefox": 
+			System.setProperty("webdriver.geckodriver.driver",
+					"C:/Users/BI/eclipse-workspace/selenium-for-beginners/src/main/resources/geckodriver.exe");
+			// new instance of driver
+			driver = new FirefoxDriver();
+			break;
+			
+			
+		default:
+			
+		System.out.println("Do not know how to start "+ browser + ", starting chrome instead");
+			System.setProperty("webdriver.chrome.driver",
+					"C:/Users/BI/eclipse-workspace/selenium-for-beginners/src/main/resources/chromedriver.exe");
+			// new instance of driver
+			driver = new ChromeDriver();
+			
+			break;
+		}
+		
+		
+		
+				
 
 				// sleep for 3 second
 				sleep(1000);
@@ -89,7 +122,7 @@ public class LoginTests {
 	}
 	
 
-
+	//Negative Login Test
 
 	@Parameters({ "username", "password", "expectedMessage" })
 	@Test(priority = 2, groups = { "negativeTests", "smokeTests" })
