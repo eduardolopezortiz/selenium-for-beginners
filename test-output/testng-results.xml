@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-02-02T14:12:30 CST" name="Debug" finished-at="2023-02-02T14:12:45 CST" duration-ms="15083">
+  <suite started-at="2023-02-02T16:18:57 CST" name="Debug" finished-at="2023-02-02T16:19:08 CST" duration-ms="10855">
     <groups>
     </groups>
-    <test started-at="2023-02-02T14:12:30 CST" name="ExecptionTest" finished-at="2023-02-02T14:12:45 CST" duration-ms="15083">
+    <test started-at="2023-02-02T16:18:57 CST" name="ExecptionTest" finished-at="2023-02-02T16:19:08 CST" duration-ms="10855">
       <class name="com.herokuapp.theinternet.ExceptionsTests">
-        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:com.herokuapp.theinternet.ExceptionsTests@644baf4a]" started-at="2023-02-02T14:12:30 CST" name="setUp" finished-at="2023-02-02T14:12:36 CST" duration-ms="5154" status="PASS">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:com.herokuapp.theinternet.ExceptionsTests@201a4587]" started-at="2023-02-02T16:18:57 CST" name="setUp" finished-at="2023-02-02T16:18:59 CST" duration-ms="2147" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,11 +18,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="noSuchElementExceptionTest()[pri:0, instance:com.herokuapp.theinternet.ExceptionsTests@644baf4a]" started-at="2023-02-02T14:12:36 CST" name="noSuchElementExceptionTest" finished-at="2023-02-02T14:12:44 CST" duration-ms="8555" status="PASS">
+        <test-method signature="noSuchElementExceptionTest()[pri:0, instance:com.herokuapp.theinternet.ExceptionsTests@201a4587]" started-at="2023-02-02T16:18:59 CST" name="noSuchElementExceptionTest" finished-at="2023-02-02T16:19:08 CST" duration-ms="8451" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- noSuchElementExceptionTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.herokuapp.theinternet.ExceptionsTests@644baf4a]" started-at="2023-02-02T14:12:44 CST" name="tearDown" finished-at="2023-02-02T14:12:45 CST" duration-ms="1269" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.herokuapp.theinternet.ExceptionsTests@201a4587]" started-at="2023-02-02T16:19:08 CST" name="tearDown" finished-at="2023-02-02T16:19:08 CST" duration-ms="203" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

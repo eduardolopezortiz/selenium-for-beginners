@@ -7,7 +7,7 @@
       <class name="com.herokuapp.theinternet.ExceptionsTests">
         <methods>
           <include name="tearDown"/>
-          <include name="homewrokTest"/>
+          <include name="noSuchElementExceptionTest"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- com.herokuapp.theinternet.ExceptionsTests -->

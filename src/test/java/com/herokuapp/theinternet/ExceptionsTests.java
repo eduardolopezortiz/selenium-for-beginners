@@ -28,14 +28,14 @@ public class ExceptionsTests {
 		switch (browser) {
 		case "chrome":
 			System.setProperty("webdriver.chrome.driver",
-					"C:/Users/BI/eclipse-workspace/selenium-for-beginners/src/main/resources/chromedriver.exe");
+					"C:/Users/BI/cursos/selenium-for-beginners/src/main/resources/chromedriver.exe");
 			// new instance of driver
 			driver = new ChromeDriver();
 			break;
 
 		case "firefox":
 			System.setProperty("webdriver.geckodriver.driver",
-					"C:/Users/BI/eclipse-workspace/selenium-for-beginners/src/main/resources/geckodriver.exe");
+					"C:/Users/BI/cursos/selenium-for-beginners/src/main/resources/geckodriver.exe");
 			// new instance of driver
 			driver = new FirefoxDriver();
 			break;
@@ -44,7 +44,7 @@ public class ExceptionsTests {
 
 			System.out.println("Do not know how to start " + browser + ", starting chrome instead");
 			System.setProperty("webdriver.chrome.driver",
-					"C:/Users/BI/eclipse-workspace/selenium-for-beginners/src/main/resources/chromedriver.exe");
+					"C:/Users/BI/cursos/selenium-for-beginners/src/main/resources/chromedriver.exe");
 			// new instance of driver
 			driver = new ChromeDriver();
 
