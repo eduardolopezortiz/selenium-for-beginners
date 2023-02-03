@@ -2,6 +2,8 @@ package com.herokuapp.theinternet;
 
 import static org.testng.Assert.assertEquals;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -73,11 +75,13 @@ public class ExceptionsTests {
 		//Click Add button
 		WebElement addButtonElement = driver.findElement(By.xpath("/html//button[@id='add_btn']"));
 		addButtonElement.click();
-		try {
-			Thread.sleep(6000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		
+		
+		//Implicit wait
+		//tells WebDriver to wait to certain amount of time when try to find a element(s) if they arent 
+		//inmediately available 
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		
 		
 		//Verify Row 2 input field is displayed
 		WebElement row2Input = driver.findElement(By.xpath("//div[@id='rows']/div[3]/div[@class='row']/input[@type='text']"));
