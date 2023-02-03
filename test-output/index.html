@@ -103,7 +103,7 @@
                     <div class="method-list-content passed suite-Debug">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Debug" title="com.herokuapp.theinternet.ExceptionsTests" class="method navigator-link" hash-for-method="noSuchElementExceptionTest">noSuchElementExceptionTest</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Debug" title="com.herokuapp.theinternet.ExceptionsTests" class="method navigator-link" hash-for-method="elementNotInteractableException">elementNotInteractableException</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Debug -->
@@ -126,9 +126,9 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="noSuchElementExceptionTest">
-                  </a> <!-- noSuchElementExceptionTest -->
-                  <span class="method-name">noSuchElementExceptionTest</span>
+                  <a name="elementNotInteractableException">
+                  </a> <!-- elementNotInteractableException -->
+                  <span class="method-name">elementNotInteractableException</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -148,7 +148,7 @@
     &lt;classes&gt;
       &lt;class name=&quot;com.herokuapp.theinternet.ExceptionsTests&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;noSuchElementExceptionTest&quot;/&gt;
+          &lt;include name=&quot;elementNotInteractableException&quot;/&gt;
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- com.herokuapp.theinternet.ExceptionsTests --&gt;
     &lt;/classes&gt;
@@ -192,14 +192,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'noSuchElementExceptionTest')
+data.setCell(0, 1, 'elementNotInteractableException')
 data.setCell(0, 2, 'com.herokuapp.theinternet.ExceptionsTests')
-data.setCell(0, 3, 12774);
+data.setCell(0, 3, 9347);
 window.suiteTableData['Debug']= { tableData: data, tableDiv: 'times-div-Debug'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 12 seconds</span>
+              <span class="suite-total-time">Total running time: 9 seconds</span>
               <div id="times-div-Debug">
               </div> <!-- times-div-Debug -->
             </div> <!-- times-div -->
@@ -214,9 +214,16 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Debug" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">0 ignored methods</span>
+            <span class="header-content">1 ignored method</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.herokuapp.theinternet.ExceptionsTests</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">noSuchElementExceptionTest</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Debug" class="panel">
@@ -231,12 +238,12 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">noSuchElementExceptionTest</span>
-                <span class="method-start">8459 ms</span>
+                <span class="method-name">elementNotInteractableException</span>
+                <span class="method-start">2273 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">21245 ms</span>
+                <span class="method-start">11623 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
