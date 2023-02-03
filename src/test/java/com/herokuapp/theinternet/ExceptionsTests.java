@@ -9,6 +9,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -77,14 +79,13 @@ public class ExceptionsTests {
 		addButtonElement.click();
 		
 		
-		//Implicit wait
-		//tells WebDriver to wait to certain amount of time when try to find a element(s) if they arent 
-		//inmediately available 
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		//Explicit wait 
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebElement row2Input = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='rows']/div[3]/div[@class='row']/input[@type='text']")));
+		
 		
 		
 		//Verify Row 2 input field is displayed
-		WebElement row2Input = driver.findElement(By.xpath("//div[@id='rows']/div[3]/div[@class='row']/input[@type='text']"));
 		Assert.assertTrue(row2Input.isDisplayed(),"Row 2 is not diplayed");
 		
 			
